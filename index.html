@@ -39,15 +39,23 @@
     <button onclick="incrementCounter()">Click Me!</button>
     <p>Button clicked <span id="counter">0</span> times.</p>
 
-    <script>
-        // Initialize counter
-        let count = 0;
+    <!-- Color changer button -->
+    <button onclick="changeBackgroundColor()">Change Background Color</button>
 
-        // Function to increment counter
+    <script>
+        // Click counter feature
+        let count = 0;
         function incrementCounter() {
             count++;
             document.getElementById('counter').innerText = count;
             alert('Button clicked!');
+        }
+
+        // Random background color changer
+        function changeBackgroundColor() {
+            const colors = ['#f0f4f8', '#ffefd5', '#d1ffd6', '#ffe1f2', '#f2e1ff'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
         }
     </script>
 
